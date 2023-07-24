@@ -1,0 +1,7 @@
+<div *ngIf="alumnos$ | async as filteredAlumnos">
+  <ul>
+    <li *ngFor="let alumno of filteredAlumnos">
+      {{ alumno.nombre }} - {{ alumno.edad }}
+    </li>
+  </ul>
+</div>
