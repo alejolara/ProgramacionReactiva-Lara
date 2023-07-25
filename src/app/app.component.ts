@@ -38,7 +38,9 @@ export class AppComponent implements OnDestroy {
       const filteredAlumnos = alumnos.filter((alumno) => alumno.edad > 24);
       observer.next(filteredAlumnos);
       observer.complete();
-    });
+    }).pipe(
+      map((alumnos) => alumnos.filter((alumno) => alumno.edad > 24))
+    );
   }
 
   ngOnDestroy() {
